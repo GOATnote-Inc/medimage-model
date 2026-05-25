@@ -1,0 +1,5 @@
+* @bGOATnote
+/.github/ @bGOATnote
+/scripts/license_preflight.py @bGOATnote
+/src/medimage_model/data/ @bGOATnote
+/data/permissive_only/manifests/ @bGOATnote
