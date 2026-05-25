@@ -1,0 +1,17 @@
+{
+  "dataset_id": "openneuro:ds002785",
+  "name": "OpenNeuro ds002785 (structural MRI seed)",
+  "modality": "MRI",
+  "anatomy": "brain",
+  "size_volumes": 250,
+  "license": {
+    "spdx": "CC0-1.0",
+    "commercial_use": true,
+    "share_alike": false,
+    "redistribute": true,
+    "url": "https://creativecommons.org/publicdomain/zero/1.0/"
+  },
+  "source_url": "https://openneuro.org/datasets/ds002785",
+  "manifest_version": 1,
+  "notes": "Seed manifest for v0.1 contrastive pretraining. Volume count is a planning placeholder; real per-subject counts will be pinned in the data-pull PR."
+}

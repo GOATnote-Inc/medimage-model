@@ -1,0 +1,16 @@
+{
+  "dataset_id": "test:nc",
+  "name": "Non-commercial fixture (must be rejected)",
+  "modality": "MRI",
+  "anatomy": "brain",
+  "size_volumes": 1,
+  "license": {
+    "spdx": "CC-BY-NC-SA-4.0",
+    "commercial_use": false,
+    "share_alike": true,
+    "redistribute": false,
+    "url": "https://creativecommons.org/licenses/by-nc-sa/4.0/"
+  },
+  "source_url": "https://example.invalid/",
+  "manifest_version": 1
+}
