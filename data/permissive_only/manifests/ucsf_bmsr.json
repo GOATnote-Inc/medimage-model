@@ -1,0 +1,17 @@
+{
+  "dataset_id": "ucsf:bmsr",
+  "name": "UCSF Brain Metastases Stereotactic Radiosurgery (UCSF-BMSR) MRI dataset",
+  "modality": "MRI",
+  "anatomy": "brain",
+  "size_volumes": 412,
+  "license": {
+    "spdx": "CC-BY-4.0",
+    "commercial_use": true,
+    "share_alike": false,
+    "redistribute": true,
+    "url": "https://creativecommons.org/licenses/by/4.0/"
+  },
+  "source_url": "https://arxiv.org/abs/2304.07248",
+  "manifest_version": 1,
+  "notes": "Brain metastases with clinical + imaging feature information. Used for downstream tumor-detection finetune in v0.2."
+}
