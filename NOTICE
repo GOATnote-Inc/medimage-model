@@ -1,0 +1,8 @@
+medimage-model
+Copyright 2026 GOATnote Autonomous Research Inc.
+
+The CODE in this repository is licensed under the Apache License 2.0.
+Any trained model weights published from this repository carry their own
+license, documented in each release model card. Training-data licenses are
+documented in docs/LICENSE_MAP.md. This repository targets a fully
+permissive, commercial-use-friendly stack.

@@ -1,6 +1,6 @@
 # Architecture
 
-A brain-MR multimodal reasoning model with a clean commercial-use-friendly license chain.
+Planned architecture for a brain-MR multimodal reasoning model with a clean commercial-use-friendly license chain. None of the layers below exist in this repository yet except the data layer's license preflight gate; this document is the design target, not a description of shipped code.
 
 ```
 ┌────────────────────────────────────────────────────────────┐
@@ -21,7 +21,7 @@ A brain-MR multimodal reasoning model with a clean commercial-use-friendly licen
 ## Training stages
 1. **Contrastive image-text pretraining** — align MAISI-v2 latents with report-sentence embeddings.
 2. **Supervised report generation** — image → `{findings, impression, comparison, recommendations}`.
-3. **GRPO with verifiable rewards** — reused from healthcraft RL coupling. Critical-finding penalties dominate gradient when missed.
+3. **GRPO with verifiable rewards** — critical-finding penalties dominate the gradient when missed.
 
 ## Why a parallel commercial-OK track
 See `docs/LICENSE_MAP.md`. The research-track sibling repo `medimage-model-research` is architecturally identical but ingests MR-RATE / CT-RATE and therefore inherits CC BY-NC-SA on weights. Both repos publish through the same `medimage-eval` substrate so results are directly comparable.

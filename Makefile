@@ -1,4 +1,4 @@
-.PHONY: help venv install lint test smoke preflight train serve clean
+.PHONY: help venv install lint test smoke preflight clean
 
 PY ?= python3.12
 VENV := .venv
@@ -11,8 +11,6 @@ help:
 	@echo "  test       hermetic unit tests"
 	@echo "  smoke      end-to-end smoke with synthetic inputs"
 	@echo "  preflight  validate license manifests"
-	@echo "  train      kick a training run (requires train extra + GPU)"
-	@echo "  serve      stand up the inference server (requires train extra + GPU)"
 
 venv:
 	$(PY) -m venv $(VENV)
@@ -34,12 +32,6 @@ smoke:
 
 preflight:
 	$(VENV)/bin/python scripts/license_preflight.py data/permissive_only/manifests
-
-train:
-	$(VENV)/bin/python -m medimage_model.training.entry
-
-serve:
-	$(VENV)/bin/python -m medimage_model.serving.entry
 
 clean:
 	rm -rf $(VENV) build dist *.egg-info .pytest_cache .ruff_cache .coverage htmlcov

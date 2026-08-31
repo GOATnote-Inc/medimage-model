@@ -45,10 +45,20 @@ def test_preflight_rejects_nc_manifest(tmp_path: Path):
     assert "REJECTED" in result.stderr
 
 
-def test_preflight_handles_missing_dir():
+def test_preflight_fails_closed_on_missing_dir():
+    """A path typo must never green the gate (fail-closed)."""
     result = _run(REPO_ROOT / "does-not-exist")
-    assert result.returncode == 0
-    assert "treating as empty" in result.stdout
+    assert result.returncode == 2
+    assert "does not exist" in result.stderr
+
+
+def test_preflight_fails_closed_on_empty_dir(tmp_path):
+    """Zero manifests checked is not a pass."""
+    target = tmp_path / "empty"
+    target.mkdir()
+    result = _run(target)
+    assert result.returncode == 2
+    assert "no manifests found" in result.stderr
 
 
 def test_preflight_accepts_real_seed_manifests():

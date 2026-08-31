@@ -117,15 +117,16 @@ def main(argv: list[str]) -> int:
         return 64
     root = Path(argv[1])
     if not root.exists():
-        # An absent manifest directory is treated as "no datasets to check" —
-        # CI passes on a fresh scaffold. The OpenNeuro seed PR populates it.
-        print(f"manifest dir does not exist: {root} (treating as empty)")
-        return 0
+        # Fail closed: a missing directory means nothing was checked. A path
+        # typo must never green the gate that the commercial-OK promise rests on.
+        print(f"FAILED: manifest dir does not exist: {root}", file=sys.stderr)
+        return 2
 
     manifests = sorted(root.glob("*.json"))
     if not manifests:
-        print(f"no manifests found under {root}")
-        return 0
+        # Fail closed for the same reason: zero manifests checked is not a pass.
+        print(f"FAILED: no manifests found under {root}", file=sys.stderr)
+        return 2
 
     all_errors: list[str] = []
     for path in manifests:
