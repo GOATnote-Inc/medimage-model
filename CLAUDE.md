@@ -6,12 +6,11 @@ Ship a fully-open, commercial-use-friendly brain-MR multimodal reasoning model. 
 ## Non-negotiables
 
 1. **License preflight at ingest.** Every dataset must pass `scripts/license_preflight.py` before being added to `data/permissive_only/`. The preflight refuses any CC BY-NC, CC BY-NC-SA, CC BY-NC-ND, or research-only license.
-2. **No `.env` reads.** Source from `/Users/kiteboard/lostbench/.env` for judge API keys.
-3. **Judge pre-flight before any multi-hour eval/train.** `feedback_eval_preflight_judge_key.md` lesson.
+2. **No `.env` reads.** Judge API keys come from the environment; verify presence with length-only checks, never print values.
+3. **Judge pre-flight before any multi-hour eval/train.** Silent judge auth failures poison every reward signal.
 4. **No `git add -A`.** Stage by name; data/cache/, checkpoints/, wandb/, eval_outputs/ are artifact-class.
 5. **Synthetic data on a leash.** Synthetic samples carry a manifest tag; per-stratum synthetic fraction never exceeds the configured cap without explicit sign-off.
-6. **Brev pods are direct-ssh.** Training on `distant-peach-wildebeest` H100; never touch `exact-kind-orca` (live prod).
-7. **Receipts on every release.** `releases/vX.Y/attestation.json` carries: code commit, data manifest hash, eval results hash, judge versions, seed. Append-only.
+6. **Receipts on every release.** `releases/vX.Y/attestation.json` carries: code commit, data manifest hash, eval results hash, judge versions, seed. Append-only.
 
 ## Continuation contract
 - Start: read `STATUS.md`.
