@@ -2,6 +2,9 @@
 
 **License-preflight scaffold for a planned commercial-use-friendly brain-MR multimodal model. No weights, training code, or serving code exist yet.**
 
+
+> **Maintenance status (2026-09):** passive. This repository is kept available as a reference implementation; CI runs on pushes and pull requests only, Dependabot security alerts remain enabled, and no scheduled jobs or hosted services consume ongoing resources. No active development is planned.
+
 `medimage-model` is the fully-permissive track of the GOATnote medical imaging stack. Its purpose is to train only on commercial-use-friendly data (OpenNeuro CC0, permissive open corpora, NVIDIA Open Model License synthesis), enforced by a license preflight gate at ingest. Today, the gate and two seed manifests are what exists.
 
 > Status: pre-v0.1 scaffold. There is no model here yet — no checkpoints, no training or serving entry points, no eval adapter. The research-track sibling is [`medimage-model-research`](https://github.com/GOATnote-Inc/medimage-model-research) — same scaffold, different data-license boundary.
